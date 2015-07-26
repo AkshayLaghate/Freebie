@@ -8,8 +8,8 @@
     </style>
 
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
-        <item name="android:background" tools:ignore="NewApi">@color/blue_grey_600</item>
-        <item name="background">@color/blue_grey_600</item>
+        <item name="android:background" tools:ignore="NewApi">@color/teal_900</item>
+        <item name="background">@color/teal_900</item>
         <item name="homeAsUpIndicator">@drawable/ic_drawer</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_drawer</item>
     </style>

@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class HomeActivity extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, OffersFragment.OnFragmentInteractionListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, OffersFragment.OnFragmentInteractionListener, SurveyFragment.OnFragmentInteractionListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -46,8 +46,19 @@ public class HomeActivity extends ActionBarActivity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment f = null;
+        switch (position) {
+            case 0:
+                f = OffersFragment.newInstance(null, null);
+                break;
+            case 1:
+                f = SurveyFragment.newInstance(null, null);
+                break;
+        }
+
+
         fragmentManager.beginTransaction()
-                .replace(R.id.container, OffersFragment.newInstance(null, null))
+                .replace(R.id.container, f)
                 .commit();
     }
 

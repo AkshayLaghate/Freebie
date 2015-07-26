@@ -17,7 +17,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.appnext.appnextsdk.API.AppnextAPI;
 import com.appnext.appnextsdk.API.AppnextAd;
@@ -72,7 +71,7 @@ public class OffersFragment extends Fragment {
     }
 
     public static void packageInstalled(String pkg, Context c) {
-        Toast.makeText(c, pkg, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(c, pkg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -228,7 +227,7 @@ public class OffersFragment extends Fragment {
             }
 
             tvName.setText(ad.get(position).getAdTitle());
-            tvCash.setText(ad.get(position).getRevenueRate());
+            tvCash.setText(String.valueOf(Float.parseFloat(ad.get(position).getRevenueRate()) * 60));
 
 
             return convertView;
